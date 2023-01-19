@@ -26,7 +26,7 @@
                 <img
                   id="logo"
                   style="width: 90px; heigth: 90px"
-                  src="assets/images/logo.png"
+                  src="/assets/images/logo.png"
                   alt="Logo"
                 />
               </a>
@@ -320,7 +320,7 @@
             data-wow-delay="0.2s"
           >
             <div class="blog_image">
-              <img :src="`assets/images/${listBlog[0].img}`" alt="blog" />
+              <img :src="`/assets/images/${listBlog[0].img}`" alt="blog" />
             </div>
             <div class="blog_content">
               <h3 class="blog_title">
