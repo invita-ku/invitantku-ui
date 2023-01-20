@@ -7,15 +7,30 @@ const routes = [
     component: () => import('../pages/landing-page/index.vue'),
   },
   {
-    path: '/template-1/:id',
-    name: 'template-1',
-    component: () => import('../pages/template/template-1/index.vue'),
+    path: '/login',
+    name: 'Login Page',
+    component: () => import('../pages/auth/login.vue'),
   },
   {
-    path: '/template-2/:id',
-    name: 'template-2',
-    component: () => import('../pages/template/template-2/index.vue'),
+    path: '/register',
+    name: 'Register Page',
+    component: () => import('../pages/auth/register.vue'),
   },
+  {
+    path: '/form',
+    name: 'Form Input',
+    component: () => import('../pages/form-submit/index.vue'),
+  },
+  {
+    path: '/wedding-invitation/:id',
+    name: 'Wedding Invitation',
+    component: () => import('../pages/template/template-1/index.vue'),
+  },
+  // {
+  //   path: '/template-2/:id',
+  //   name: 'Template 2',
+  //   component: () => import('../pages/template/template-2/index.vue'),
+  // },
 
   // Catch all route undefined
   {

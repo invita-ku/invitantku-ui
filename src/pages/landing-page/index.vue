@@ -1,28 +1,11 @@
 <template>
-  <div class="preloader">
-    <div class="loader">
-      <div class="ytp-spinner">
-        <div class="ytp-spinner-container">
-          <div class="ytp-spinner-rotator">
-            <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-            <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <section id="home" class="header_area">
     <div id="header_navbar" class="header_navbar">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" @click="router.push('/')" >
                 <img
                   id="logo"
                   style="width: 90px; heigth: 90px"
@@ -94,10 +77,10 @@
                   disebarkan, dan design yang interaktif.
                 </p>
                 <a
-                  href="#features"
                   class="main-btn wow fadeInUp"
                   data-wow-duration="1.3s"
                   data-wow-delay="0.8s"
+                  @click="router.push('/form')"
                   >Buat Undangan Sekarang!</a
                 >
               </div>
@@ -184,7 +167,7 @@
                   data-wow-duration="1.3s"
                   data-wow-delay="0.2s"
                 >
-                  Tenatan Invitanku
+                  Tentang Invitanku
                 </h4>
                 <p
                   class="wow fadeInUp"
@@ -245,7 +228,7 @@
               data-wow-duration="1.3s"
               data-wow-delay="0.4s"
             >
-              Tersedia pilihan pake undangan dengan detail tertera.
+              Tersedia pilihan paket undangan dengan detail tertera.
             </p>
           </div>
         </div>
@@ -366,7 +349,8 @@
 
 <script setup>
 import { ref } from 'vue';
-
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const listBlog = ref([
   {
     img: 'sttnf.png',

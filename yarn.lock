@@ -117,6 +117,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
+"@popperjs/core@^2.9.2":
+  version "2.11.6"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
+  integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
 "@vitejs/plugin-vue@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.0.0.tgz#93815beffd23db46288c787352a8ea31a0c03e5e"
@@ -217,10 +222,20 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.45.tgz#a3fffa7489eafff38d984e23d0236e230c818bc2"
   integrity sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==
 
+bootstrap@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.3.tgz#54739f4414de121b9785c5da3c87b37ff008322b"
+  integrity sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==
+
 csstype@^2.6.8:
   version "2.6.21"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.21.tgz#2efb85b7cc55c80017c66a5ad7cbd931fda3a90e"
   integrity sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==
+
+debounce@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 esbuild@^0.16.3:
   version "0.16.17"
@@ -364,6 +379,14 @@ vue-router@4:
   integrity sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==
   dependencies:
     "@vue/devtools-api" "^6.4.5"
+
+vue3-popper@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/vue3-popper/-/vue3-popper-1.5.0.tgz#eeac767e1011942fe1737e8299a832b530c0a997"
+  integrity sha512-xaEnx90YBnlSg5G2yWqm2DHWHg+DB99UVRp4VsyTF0QLXyHrqSuE1Xo5+sG0AQq/lBcrGMlk5NU5xE2MDLKViw==
+  dependencies:
+    "@popperjs/core" "^2.9.2"
+    debounce "^1.2.1"
 
 vue@^3.2.45:
   version "3.2.45"
