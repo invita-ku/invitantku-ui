@@ -360,4 +360,8 @@ const listBlog = ref([
   },
 ]);
 </script>
-<style></style>
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>

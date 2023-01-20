@@ -1353,9 +1353,12 @@ p {
   margin-top: 15px;
 }
 .single_blog .blog_image img {
+  width: 35%;
+}
+.single_blog .blog_image {
   display: flex;
   align-items: center;
-  width: 35%;
+  justify-content: center;
 }
 .single_blog .blog_content {
   margin-top: 25px;
