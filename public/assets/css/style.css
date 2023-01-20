@@ -1353,6 +1353,8 @@ p {
   margin-top: 15px;
 }
 .single_blog .blog_image img {
+  display: flex;
+  align-items: center;
   width: 35%;
 }
 .single_blog .blog_content {
