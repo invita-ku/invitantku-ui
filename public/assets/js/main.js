@@ -9,6 +9,7 @@
   }
   window.onscroll = function () {
     if (window.location.pathname.includes('/wedding-invitation/')) return;
+    if (window.location.pathname.includes('/form')) return;
     var header_navbar = document.getElementById('header_navbar');
     var logo = document.querySelector('img#logo');
     var sticky = header_navbar.offsetTop;

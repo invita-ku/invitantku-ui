@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" @click="router.push('/')" >
+              <a class="navbar-brand" @click="router.push('/')">
                 <img
                   id="logo"
                   style="width: 90px; heigth: 90px"
@@ -80,7 +80,7 @@
                   class="main-btn wow fadeInUp"
                   data-wow-duration="1.3s"
                   data-wow-delay="0.8s"
-                  @click="router.push('/form')"
+                  href="#pricing"
                   >Buat Undangan Sekarang!</a
                 >
               </div>
@@ -248,7 +248,9 @@
               <li>Watermark</li>
               <li>Tanpa Revisi</li>
             </ul>
-            <a href="#" class="mian-btn">Gratis</a>
+            <button @click="router.push('/form')" class="mian-btn">
+              Gratis
+            </button>
           </div>
         </div>
         <div class="col-lg-4 col-md-8 col-sm-10">
@@ -265,7 +267,9 @@
               <li>Eksklusif Design</li>
               <li>3x Revisi</li>
             </ul>
-            <a href="#" class="mian-btn">Beli Sekarang!</a>
+            <button disabled @click="router.push('/form')" class="mian-btn">
+              Cooming Soon!
+            </button>
           </div>
         </div>
       </div>
@@ -348,9 +352,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
+
+onMounted(() => {
+  localStorage.removeItem('dataPernikahan');
+});
 const listBlog = ref([
   {
     img: 'sttnf.png',

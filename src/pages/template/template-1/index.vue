@@ -8,15 +8,13 @@
           style="background-color: #f8f8f899"
         >
           <h1 class="font-2 mb-5" style="color: #65741f">Wedding Invitation</h1>
-          <div class="img">
-            <img
-              data-aos="zoom-in"
-              data-aos-delay="300"
-              src="/depan.png"
-              alt="logo"
-              class="img-to"
-            />
-          </div>
+          <h5>
+            {{ dataPernikahan.nameMan }}
+          </h5>
+          <h5>&</h5>
+          <h5>
+            {{ dataPernikahan.nameWoman }}
+          </h5>
           <h5
             data-aos="zoom-in"
             data-aos-delay="500"
@@ -61,7 +59,9 @@
                 style="background-color: #f8f8f8d7"
               >
                 <h5 class="card-title cal fs-2">The Wedding of</h5>
-                <h1 class="font-2">Sidna & Ariesty</h1>
+                <h3 class="font-2">
+                  {{ dataPernikahan.nameMan }} & {{ dataPernikahan.nameWoman }}
+                </h3>
                 <small class="card-text"
                   >Kepada Bapak/Ibu/Saudara/i
                   <span style="text-transform: uppercase; font-weight: bold">{{
@@ -77,7 +77,11 @@
           </div>
         </div>
         <div class="img">
-          <img src="/we.jpg" class="card-img img1" />
+          <img
+            src="/wedding-bg.jpg"
+            style="height: 45rem"
+            class="card-img img1"
+          />
         </div>
       </section>
       <section id="dalil">
@@ -128,20 +132,17 @@
           >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="/sidna.jpg" class="img-fluid rounded" alt="..." />
+                <img :src="dataPernikahan.manPic" class="img-fluid rounded" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body text-center p-0 mt-4 mb-2">
                   <p>🤴</p>
-                  <h1 class="card-title cal">Sidna Muhammad Zen</h1>
+                  <h1 class="card-title cal">{{ dataPernikahan.nameMan }}</h1>
                   <small>Putra Dari</small>
                   <h5 class="card-text font-2">
-                    Bpk. Akhmad Faozi & Ibu. Heriyanti
+                    Bpk. {{ dataPernikahan.nameManFather }} & Ibu.
+                    {{ dataPernikahan.nameManMother }}
                   </h5>
-                  <p class="card-text">
-                    Jl. Mawardi RT.02, RW.01 desa Adiwerna, Kec.
-                    Adiwerna,Kab.Tegal
-                  </p>
                 </div>
               </div>
             </div>
@@ -155,19 +156,16 @@
               <div class="col-md-8">
                 <div class="card-body text-center p-0 mt-4 mb-2">
                   <p>👸</p>
-                  <h1 class="card-title cal">Ariesty Rizky Aliefia</h1>
+                  <h1 class="card-title cal">{{ dataPernikahan.nameWoman }}</h1>
                   <small>Putri Dari</small>
                   <h5 class="card-text font-2">
-                    Bpk. Imam Santoso<span style="font-size: small">(alm)</span>
-                    & Ibu. Widiyanti
+                    Bpk. {{ dataPernikahan.nameWomanFather }} & Ibu.
+                    {{ dataPernikahan.nameWomanMother }}
                   </h5>
-                  <p class="card-text">
-                    Jl.Sawo Gang 1 Rt/RW 04/02 Kel.Procot Kec.Slawi Kab.Tegal
-                  </p>
                 </div>
               </div>
               <div class="col-md-4">
-                <img src="/fia.jpg" class="img-fluid rounded" alt="..." />
+                <img :src="dataPernikahan.womanPic" class="img-fluid rounded" alt="..." />
               </div>
             </div>
           </div>
@@ -199,12 +197,13 @@
               <h3 class="mt-3 mb-0 cal" data-aos="fade-right">Akad</h3>
               <div>
                 <small class="m-0" data-aos="flip-left">
-                  <i class="bi bi-calendar4-event"></i> Minggu, 12 Maret 2023
+                  <i class="bi bi-calendar4-event"></i>
+                  {{ new Date(dataPernikahan.weddingDate).toDateString() }}
                 </small>
               </div>
               <div>
                 <small class="m-0" data-aos="flip-left">
-                  <i class="bi bi-clock"></i> 08.00 WIB
+                  <i class="bi bi-clock"></i> 09.00 WIB
                 </small>
               </div>
               <div>
@@ -223,18 +222,19 @@
               </p>
               <h1 class="cal mt-3 mb-1" data-aos="fade-right">Resepsi</h1>
               <p class="m-0" data-aos="flip-left">
-                <i class="bi bi-calendar4-event"></i> Minggu, 12 Maret 2023
+                <i class="bi bi-calendar4-event"></i>
+                {{ new Date(dataPernikahan.weddingDate).toDateString() }}
               </p>
               <p class="m-0" data-aos="flip-left">
                 <i class="bi bi-clock"></i> 11.00 WIB-Selesai
               </p>
               <p class="m-0" data-aos="flip-left">
-                <i class="bi bi-geo-alt"></i> Jl.Sawo Gang 1 RT/RW 04/02
-                Kel.Procot Kec.Slawi Kab.Tegal
+                <i class="bi bi-geo-alt"></i>
+                {{ dataPernikahan.weddingAddress }}
               </p>
               <a
                 class="btn btn-secondary mt-3"
-                href="https://goo.gl/maps/tpR4QbCKZdaKbAvs9"
+                :href="dataPernikahan.gmapsLink"
                 target="_blank"
               >
                 <i class="bi bi-geo-fill"></i> lihat lokasi di maps
@@ -448,30 +448,6 @@
         </div>
       </section>
       <section id="Story">
-        <div
-          id="carouselExampleSlidesOnly"
-          class="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="500"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="/kita.jpg" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="/kita1.jpg" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="/kita2.jpg" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="/kita3.jpg" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="/kita3.jpg" class="d-block w-100" alt="..." />
-            </div>
-          </div>
-        </div>
         <div class="text-center">
           <div class="img">
             <img
@@ -526,9 +502,6 @@
         </div>
       </section>
       <section id="footer">
-        <div class="img p-3 text-center" data-aos="zoom-in">
-          <img src="/akhir.jpg" class="card-img img5 shadow" />
-        </div>
         <div
           class="text-center mt-2 mb-4 mx-3"
           data-aos="fade-up"
@@ -556,19 +529,19 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from 'vue';
+import { reactive, ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-
+let dataPernikahan = ref({});
 onMounted(() => {
-  // myAudioFunction();
+  dataPernikahan.value = JSON.parse(localStorage.getItem('dataPernikahan'));
 });
 
 //rsvp
 const nama = route.query.to;
 let form = reactive({
-  nama: nama.toUpperCase(),
+  nama: nama?.toUpperCase() || '',
   asal: '',
   sebagai: '',
   isHadir: false,
@@ -604,13 +577,15 @@ let menuju_halal = reactive({
   minutes: 0,
   seconds: 0,
 });
-// Set the date we're counting down to
-const countDownDate = new Date('Mar 12, 2023 09:00:00').getTime();
 
 // Update the count down every 1 second
 const x = setInterval(function () {
   // Get today's date and time
   let now = new Date().getTime();
+  // Set the date we're counting down to
+  const countDownDate = new Date(
+    dataPernikahan.value.weddingDate + ' 09:00:00'
+  ).getTime();
 
   // Find the distance between now and the count down date
   let distance = countDownDate - now;
